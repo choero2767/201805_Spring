@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>index.jsp</title>
+<script>
+	document.location="/user/loginView";
+</script>
 </head>
-<body>
-	index.jsp
-</body>
 </html>

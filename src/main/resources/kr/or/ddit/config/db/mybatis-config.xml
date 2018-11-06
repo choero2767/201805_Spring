@@ -7,6 +7,8 @@
 
 	<typeAliases>
 		<typeAlias type="kr.or.ddit.file.model.FileVo" alias="fileVo"/>
+		<typeAlias type="kr.or.ddit.file.model.UserVo" alias="userVo"/>
+		<typeAlias type="kr.or.ddit.file.model.PageVo" alias="pageVo"/>
 	</typeAliases>
 
 	<environments default="development">
