@@ -5,8 +5,8 @@
 	<ul class="nav nav-sidebar">
 <!-- 		<li class="active"><a href="/main.jsp">Main <span class="sr-only">(current)</span></a></li> -->
 		<li class="active"><a href="/main">Main <span class="sr-only">(current)</span></a></li>
-		<li class="active"><a href="/userAllList">사용자 리스트</a></li>
-		<li class="active"><a href="/userPageList?page=1&pageSize=10">사용자 페이징 리스트</a></li>
+		<li class="active"><a href="/user/userAllList">사용자 리스트</a></li>
+		<li class="active"><a href="/user/userPageList?page=1&pageSize=10">사용자 페이징 리스트</a></li>
 		<li class="active"><a href="/userPageList?page=1&pageSize=10">제품 페이징 리스트</a></li>
 		<!-- 사용자 리스트 출력시 : jspuser 전체 정보를 조회하여 화면에 출력 
 		

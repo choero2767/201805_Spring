@@ -15,7 +15,7 @@
 		select * from jspuser where userId = #{userId}
 	</select>
 
-	<select id="selectUserPageList" parameterType="kr.or.ddit.util.model.pageVo.PageVo"	resultType="userVo">
+	<select id="selectUserPageList" parameterType="kr.or.ddit.util.model.PageVo"	resultType="userVo">
 		select * from
 		(select rownum rnum, a.*
 		from

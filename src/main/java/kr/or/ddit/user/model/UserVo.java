@@ -1,15 +1,21 @@
 package kr.or.ddit.user.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.http.HttpSessionBindingEvent;
 import javax.servlet.http.HttpSessionBindingListener;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class UserVo implements HttpSessionBindingListener{
 	private String userId;
 	private String name;
 	private String alias;
+	
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date birth;
+	
 	private String pass;
 	private String add1;
 	private String add2;
@@ -18,7 +24,6 @@ public class UserVo implements HttpSessionBindingListener{
 	private String tel;
 	private String profile;
 	private int rnum;
-	
 	
 	
 	public int getRnum() {
@@ -30,7 +35,6 @@ public class UserVo implements HttpSessionBindingListener{
 	}
 
 	public UserVo() {
-		super();
 	}
 	
 	public String getUserId() {
@@ -51,8 +55,15 @@ public class UserVo implements HttpSessionBindingListener{
 	public void setAlias(String alias) {
 		this.alias = alias;
 	}
+	
 	public Date getBirth() {
 		return birth;
+	}
+
+	// userPageList에 필요한것 
+	public String getFormattedBirth() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		return sdf.format(birth);
 	}
 	public void setBirth(Date birth) {
 		this.birth = birth;

@@ -19,13 +19,13 @@ import kr.or.ddit.user.model.UserVo;
 
 /*
  * servlet
- * 1. HttpServlet Å¬·¡½º¸¦ »ó¼Ó
- * 2. @WebServlet È¤Àº web.xml¿¡ url-mapping µî·Ï
- * 3. doGet, doPost °°Àº doXXX¸Þ¼Òµå¸¦ ÅëÇØ ¼­ºñ½º¸¦ °³¹ß
+ * 1. HttpServlet Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+ * 2. @WebServlet È¤ï¿½ï¿½ web.xmlï¿½ï¿½ url-mapping ï¿½ï¿½ï¿½
+ * 3. doGet, doPost ï¿½ï¿½ï¿½ï¿½ doXXXï¿½Þ¼Òµå¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ñ½º¸ï¿½ ï¿½ï¿½ï¿½ï¿½
  * 
  * spring controller
- * 1. @Controller ¾î³ëÅ×ÀÌ¼Ç Àû¿ë
- * 2. @RequestMapping ¾î³ëÅ×ÀÌ¼Ç Àû¿ë(class / method)
+ * 1. @Controller ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+ * 2. @RequestMapping ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½(class / method)
  */
 
 @RequestMapping("/hello")
@@ -34,29 +34,29 @@ public class HelloController {
 
 	private Logger logger = LoggerFactory.getLogger(HelloController.class);
 
-	// »ç¿ëÀÚ ¿äÃ» : localhost:8081/hello/hello.do url·Î ¿äÃ»À» ÇÏ°Ô µÇ¸é
-	// ¾Æ·¡ÀÇ ¸Þ¼­µå¿¡¼­ ¿äÃ»À» Ã³¸®
-	// ¸¸¾à class¿¡ Àû¿ëÇÑ @RequestMapping("/hello") ºÎºÐÀ» »èÁ¦ ÇÏ°Ô µÇ¸é
-	// localhost:8081/hello.do url·Î ¿äÃ»¿¡ ´ëÇØ hello() ¸Þ¼­µå¿¡¼­ ¿äÃ»À» Ã³¸®ÇÏ°ÔµÊ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» : localhost:8081/hello/hello.do urlï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½Ï°ï¿½ ï¿½Ç¸ï¿½
+	// ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½å¿¡ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ Ã³ï¿½ï¿½
+	// ï¿½ï¿½ï¿½ï¿½ classï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ @RequestMapping("/hello") ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï°ï¿½ ï¿½Ç¸ï¿½
+	// localhost:8081/hello.do urlï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ hello() ï¿½Þ¼ï¿½ï¿½å¿¡ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ï°Ôµï¿½
 	@RequestMapping("/hello.do")
 	public String hello() {
 
-		// viewNameÀ» ¸®ÅÏ
-		// internalResourceViewResolver ¼³Á¤¿¡ ÀÇÇØ
-		// prefix + viewName + suffix À§Ä¡ÀÇ ¸®¼Ò½º·Î
-		// ÀÀ´ä À§ÀÓÇÑ´Ù.
+		// viewNameï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		// internalResourceViewResolver ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		// prefix + viewName + suffix ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		// prefix : /WEB-INF/view
 		// suffix : .jsp
 		// viewName : hello
 		// ==> /WEB-INF/view/hello.jsp
-		// ±âº» : forward
+		// ï¿½âº» : forward
 		return "hello";
 	}
 
 	/*
-	 * servlet doGet, doPost : ¸Þ¼­µå ÀÎÀÚ°¡ HttpServletRequest, HttpServletResponse'
-	 * spring controller ¸Þ¼­µå : ºñ±³Àû ÀÚÀ¯·Ó°Ô ±¸¼ºÀÌ °¡´É HttpServletRequest,
-	 * HttpServletResponse, HttpSession, ValueObject, Model : view¿¡¼­ Ç¥ÇöÇÒ µ¥ÀÌÅÍ¸¦ ÀúÀå
+	 * servlet doGet, doPost : ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú°ï¿½ HttpServletRequest, HttpServletResponse'
+	 * spring controller ï¿½Þ¼ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ HttpServletRequest,
+	 * HttpServletResponse, HttpSession, ValueObject, Model : viewï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 	 */
 	@RequestMapping("/model")
 	public String model(Model model) {
@@ -74,21 +74,21 @@ public class HelloController {
 	@RequestMapping("/request")
 	public String request(HttpServletRequest request, Model model) {
 
-		// ±âÁ¸ servlet ÆÄ¶ó¹ÌÅÍ È®ÀÎ ¹æ½Ä
+		// ï¿½ï¿½ï¿½ï¿½ servlet ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ ï¿½ï¿½ï¿½
 		String userId = request.getParameter("userId");
 		String pass = request.getParameter("pass");
 
 		model.addAttribute("userId", userId + "_attr");
 		model.addAttribute("pass", pass + "_attr");
 		
-		// logger¸¦ ÀÌ¿ëÇÑ Ãâ·Â
+		// loggerï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		logger.debug("userId : {}", userId);
 		logger.debug("pass : {}", pass);
 
 		return "hello";
 	}
 	
-	// value objectÀÇ ¼Ó¼ºÀÌ¸§°ú µ¿ÀÏÇÑ ÀÌ¸§ÀÇ ÆÄ¶ó¹ÌÅÍ¸¦ ÀÚµ¿À¸·Î ¼³Á¤ÇØÁØ´Ù.
+	// value objectï¿½ï¿½ ï¿½Ó¼ï¿½ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ä¶ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½.
 	@RequestMapping("/vo")
 	public String vo(UserVo userVo, Model model) {
 		
@@ -99,10 +99,10 @@ public class HelloController {
 		return "hello";
 	}
 	
-	// spring mvc controller ¸Þ¼ÒµåÀÇ ¸®ÅÏÅ¸ÀÔ
+	// spring mvc controller ï¿½Þ¼Òµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½
 	// 1. String : viewName
-	// 2. ModelAndView : ½ºÇÁ¸µ Á¦°ø °´Ã¼
-	// 3. void : response °´Ã¼¿¡ °³¹ßÀÚ°¡ Á÷Á¢ ÀÀ´äÀ» ÀÛ¼º
+	// 2. ModelAndView : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼
+	// 3. void : response ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½
 	// ModelAndView
 	@RequestMapping("/modelAndView")
 	public ModelAndView modelAndView(Model model) {
@@ -135,8 +135,12 @@ public class HelloController {
 		writer.write("spring");
 		writer.write("<html>");
 		
+	}
+	
+	@RequestMapping("/exception")
+	public String view() {
+		
+		throw new ArithmeticException();
 		
 	}
-		
-
 }

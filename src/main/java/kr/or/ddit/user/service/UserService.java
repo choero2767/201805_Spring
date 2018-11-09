@@ -4,14 +4,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import kr.or.ddit.config.db.SqlFactoryBuilder;
+import org.springframework.stereotype.Service;
+
 import kr.or.ddit.user.dao.UserDao;
 import kr.or.ddit.user.model.UserVo;
 import kr.or.ddit.util.model.PageVo;
 
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-
+@Service
 public class UserService implements UserServiceInf{
 
 	private UserDao dao = new UserDao();
